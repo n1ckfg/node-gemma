@@ -5,8 +5,6 @@
 
 // 1.1. Load dependencies.
 const express = require("express");
-express.static.mime.define({ 'text/javascript': ['mjs'], 'application/wasm': ['wasm'] });
-
 const app = express();
 const fs = require("fs");
 const dotenv = require("dotenv").config();
@@ -75,6 +73,8 @@ app.use(express.static(PUBLIC_PATH));
 app.get("/", function(req, res) { // Default to index.html if no filename is given
     res.sendFile(path.join(PUBLIC_PATH, "index.html"))
 });
+
+express.static.mime.define({ 'text/javascript': ['mjs'], 'application/wasm': ['wasm'] });
 
 // 1.5. Optional: Create a webhook.
 // This updates the deployed server automatically when a new commit is made to its git repo.
