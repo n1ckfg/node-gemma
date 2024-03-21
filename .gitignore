@@ -1,6 +1,6 @@
 .DS_Store
-files/*.bin
-files/*.zip
+public/files/*.bin
+public/files/*.zip
 
 public/uploads/*
 public/sounds/sgm_plus/*
