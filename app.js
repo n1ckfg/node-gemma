@@ -5,6 +5,8 @@
 
 // 1.1. Load dependencies.
 const express = require("express");
+express.static.mime.define({ 'text/javascript': ['mjs'], 'application/wasm': ['wasm'] });
+
 const app = express();
 const fs = require("fs");
 const dotenv = require("dotenv").config();

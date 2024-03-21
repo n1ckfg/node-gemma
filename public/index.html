@@ -12,8 +12,8 @@
     <textarea id="output" style="height: 300px; width: 600px"></textarea>
 
     <script type="module">
-        //import {FilesetResolver, LlmInference} from "./js/libraries/tasks-genai/genai_bundle.js";
-        import {FilesetResolver, LlmInference} from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-genai@0.10.12";
+        import {FilesetResolver, LlmInference} from "./js/libraries/tasks-genai/genai_bundle.mjs";
+        //import {FilesetResolver, LlmInference} from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-genai@0.10.12";
 
         const input = document.getElementById("input");
         const output = document.getElementById("output");
@@ -35,8 +35,8 @@
 
         // Main function to run LLM Inference.
         async function runDemo() {
-          //const genaiFileset = await FilesetResolver.forGenAiTasks("./js/libraries/tasks-genai/wasm"); 
-          const genaiFileset = await FilesetResolver.forGenAiTasks("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-genai@0.10.12/wasm");
+          const genaiFileset = await FilesetResolver.forGenAiTasks("./js/libraries/tasks-genai/wasm"); 
+          //const genaiFileset = await FilesetResolver.forGenAiTasks("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-genai@0.10.12/wasm");
           let llmInference;
 
           submit.onclick = () => {
